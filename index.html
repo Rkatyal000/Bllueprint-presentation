@@ -244,26 +244,11 @@ h2{font-size:clamp(1.9rem,4.6vw,3.6rem);max-width:19ch}
   transition:opacity 1s ease,transform 1.1s cubic-bezier(.22,1,.36,1)}
 .in .rv3d{opacity:1;transform:perspective(1100px) rotateX(0) translateY(0)}
 
-/* ---------- floating 3d layers ---------- */
-.ghostnum{position:absolute;right:clamp(.5rem,5vw,4rem);top:6%;z-index:0;pointer-events:none;user-select:none;
-  font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(9rem,24vw,21rem);line-height:1;
-  color:transparent;-webkit-text-stroke:1.5px rgba(194,162,100,.13);
-  animation:ghostfloat 11s ease-in-out infinite alternate}
-@keyframes ghostfloat{
-  from{transform:translateY(-16px) rotate(-1.2deg) scale(.99)}
-  to{transform:translateY(18px) rotate(1.4deg) scale(1.015)}}
+/* ---------- accents ---------- */
 .slide .inner{position:relative;z-index:2}
-.stat .num{animation:numfloat 4.5s ease-in-out infinite alternate;will-change:transform}
-.stat:nth-child(2) .num{animation-delay:.9s}
-.stat:nth-child(3) .num{animation-delay:1.8s}
-.stat:nth-child(4) .num{animation-delay:2.7s}
-@keyframes numfloat{from{transform:translateZ(24px) translateY(0)}to{transform:translateZ(38px) translateY(-7px)}}
-.jump .big{display:inline-block;animation:numfloat 5.2s ease-in-out infinite alternate;animation-delay:.5s}
 .chart .pt{transform-box:fill-box;transform-origin:center}
 .in .chart .pt{animation:ptpulse 2.8s ease-in-out 2s infinite}
-@keyframes ptpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.45)}}
-.donut{animation:numfloat 6s ease-in-out infinite alternate}
-#floatnums{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
+@keyframes ptpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.35)}}
 .dotp.hero i{animation:heropulse 2.4s ease-in-out infinite}
 @keyframes heropulse{0%,100%{box-shadow:0 0 0 6px rgba(194,162,100,.18)}50%{box-shadow:0 0 0 14px rgba(194,162,100,.07)}}
 
@@ -294,14 +279,14 @@ h2{font-size:clamp(1.9rem,4.6vw,3.6rem);max-width:19ch}
   .in .donut .arc{stroke-dasharray:171.5 260}
   #moatsvg .edge.hot{stroke-dashoffset:0}
   .hint .bar{animation:none}
-  .ghostnum,.stat .num,.jump .big,.donut,.in .chart .pt,.dotp.hero i{animation:none}
+  .in .chart .pt,.dotp.hero i{animation:none}
 }
 </style>
 
 <div class="progress" id="prog"></div>
 <header class="topbar">
   <a class="wordmark" href="#cover">Blueprint<i>.</i></a>
-  <div class="tag"><span class="tagtxt">Investor Overview</span><span class="counter" id="ctr">01 / 10</span><button class="menu-btn" id="menubtn" aria-haspopup="true" aria-expanded="false">Index</button></div>
+  <div class="tag"><span class="tagtxt">Investor Overview</span><button class="menu-btn" id="menubtn" aria-haspopup="true" aria-expanded="false">Index</button></div>
 </header>
 <div class="overlay" id="menu" role="dialog" aria-label="Slide index">
   <button class="menu-btn x" id="menuclose">Close</button>
@@ -317,7 +302,6 @@ h2{font-size:clamp(1.9rem,4.6vw,3.6rem);max-width:19ch}
 <!-- 01 · COVER -->
 <section class="slide" id="cover" data-title="Cover">
   <canvas id="orbit" aria-hidden="true"></canvas>
-  <canvas id="floatnums" aria-hidden="true"></canvas>
   <div class="inner">
     <p class="kicker rv">Investor Overview</p>
     <h1 class="rv d1">Blueprint</h1>
@@ -334,7 +318,7 @@ h2{font-size:clamp(1.9rem,4.6vw,3.6rem);max-width:19ch}
 <!-- 02 · PROBLEM -->
 <section class="slide" id="problem" data-title="Problem">
   <div class="inner">
-    <div class="eyebrow"><span class="no">02</span><span class="lbl">Problem</span><span class="rule"></span></div>
+    <div class="eyebrow"><span class="lbl">Problem</span><span class="rule"></span></div>
     <h2 class="rv">Creative hiring still runs on fragmented trust</h2>
     <ul class="dash">
       <li class="rv d1">Hiring happens through Instagram DMs, WhatsApp groups, and word-of-mouth</li>
@@ -359,7 +343,7 @@ h2{font-size:clamp(1.9rem,4.6vw,3.6rem);max-width:19ch}
 <!-- 03 · WHY NOW -->
 <section class="slide" id="why-now" data-title="Why now">
   <div class="inner">
-    <div class="eyebrow"><span class="no">03</span><span class="lbl">Why now</span><span class="rule"></span></div>
+    <div class="eyebrow"><span class="lbl">Why now</span><span class="rule"></span></div>
     <h2 class="rv">The market has become big enough for a dedicated trust layer</h2>
     <div class="stats rv3d">
       <div class="stat" data-tilt><div class="num" data-count="1.03" data-suffix="B">0</div><div class="cap">Internet users in India</div></div>
@@ -406,7 +390,7 @@ h2{font-size:clamp(1.9rem,4.6vw,3.6rem);max-width:19ch}
 <!-- 04 · MARKET SHIFT -->
 <section class="slide" id="market-shift" data-title="Market shift">
   <div class="inner">
-    <div class="eyebrow"><span class="no">04</span><span class="lbl">Market shift</span><span class="rule"></span></div>
+    <div class="eyebrow"><span class="lbl">Market shift</span><span class="rule"></span></div>
     <h2 class="rv">Creative supply is moving beyond the metros</h2>
     <div class="split">
       <ul class="dash">
@@ -465,7 +449,7 @@ h2{font-size:clamp(1.9rem,4.6vw,3.6rem);max-width:19ch}
 <!-- 05 · SOLUTION -->
 <section class="slide" id="solution" data-title="Solution">
   <div class="inner">
-    <div class="eyebrow"><span class="no">05</span><span class="lbl">Solution</span><span class="rule"></span></div>
+    <div class="eyebrow"><span class="lbl">Solution</span><span class="rule"></span></div>
     <h2 class="rv">Blueprint turns informal referrals into searchable infrastructure</h2>
     <div class="split">
       <ol class="steps">
@@ -489,7 +473,7 @@ h2{font-size:clamp(1.9rem,4.6vw,3.6rem);max-width:19ch}
 <!-- 06 · PRODUCT MOAT -->
 <section class="slide" id="moat" data-title="Product moat">
   <div class="inner">
-    <div class="eyebrow"><span class="no">06</span><span class="lbl">Product moat</span><span class="rule"></span></div>
+    <div class="eyebrow"><span class="lbl">Product moat</span><span class="rule"></span></div>
     <h2 class="rv">Referral-only creates trust, accountability, and better signal</h2>
     <div class="split">
       <ul class="dash">
@@ -525,7 +509,7 @@ h2{font-size:clamp(1.9rem,4.6vw,3.6rem);max-width:19ch}
 <!-- 07 · OPPORTUNITY -->
 <section class="slide" id="opportunity" data-title="Opportunity">
   <div class="inner">
-    <div class="eyebrow"><span class="no">07</span><span class="lbl">Opportunity</span><span class="rule"></span></div>
+    <div class="eyebrow"><span class="lbl">Opportunity</span><span class="rule"></span></div>
     <h2 class="rv">Blueprint sits at the intersection of four fast-growing markets</h2>
     <div class="markets rv3d">
       <div class="mkt" data-tilt><span class="t">Creator economy</span><span class="n">2–2.5M</span><span class="c">monetized creators</span>
@@ -548,7 +532,7 @@ h2{font-size:clamp(1.9rem,4.6vw,3.6rem);max-width:19ch}
 <!-- 08 · WHY THIS WINS -->
 <section class="slide" id="positioning" data-title="Why this wins">
   <div class="inner">
-    <div class="eyebrow"><span class="no">08</span><span class="lbl">Why this wins</span><span class="rule"></span></div>
+    <div class="eyebrow"><span class="lbl">Why this wins</span><span class="rule"></span></div>
     <h2 class="rv">Not another marketplace — a hiring-speed and trust product</h2>
     <div class="split">
       <ul class="dash">
@@ -576,7 +560,7 @@ h2{font-size:clamp(1.9rem,4.6vw,3.6rem);max-width:19ch}
 <!-- 09 · BUSINESS MODEL & GTM -->
 <section class="slide" id="model" data-title="Business model &amp; GTM">
   <div class="inner">
-    <div class="eyebrow"><span class="no">09</span><span class="lbl">Business model &amp; GTM</span><span class="rule"></span></div>
+    <div class="eyebrow"><span class="lbl">Business model &amp; GTM</span><span class="rule"></span></div>
     <h2 class="rv">Proposed monetization starts with brands, not creators</h2>
     <div class="twocol rv3d">
       <div class="mcol" data-tilt>
@@ -606,7 +590,7 @@ h2{font-size:clamp(1.9rem,4.6vw,3.6rem);max-width:19ch}
 <!-- 10 · CLOSE -->
 <section class="slide" id="close" data-title="Close">
   <div class="inner">
-    <div class="eyebrow"><span class="no">10</span><span class="lbl">Close</span><span class="rule"></span></div>
+    <div class="eyebrow"><span class="lbl">Close</span><span class="rule"></span></div>
     <h2 class="rv">Blueprint can become the operating layer for India's creative economy</h2>
     <ul class="dash">
       <li class="rv d1">The industry already runs on referrals</li>
@@ -627,8 +611,7 @@ h2{font-size:clamp(1.9rem,4.6vw,3.6rem);max-width:19ch}
 (function(){
   var slides=[].slice.call(document.querySelectorAll('.slide'));
   var rail=document.getElementById('rail');
-  var ctr=document.getElementById('ctr');
-  var prog=document.getElementById('prog');
+    var prog=document.getElementById('prog');
   var hint=document.getElementById('hint');
   var dots=slides.map(function(s,i){
     var a=document.createElement('a');
@@ -642,8 +625,7 @@ h2{font-size:clamp(1.9rem,4.6vw,3.6rem);max-width:19ch}
       if(e.isIntersecting){
         e.target.classList.add('in');
         var i=slides.indexOf(e.target);
-        if(i>-1){cur=i;ctr.textContent=pad(i+1)+' / '+pad(slides.length);
-          dots.forEach(function(d,j){d.classList.toggle('on',j===i)});
+        if(i>-1){cur=i;dots.forEach(function(d,j){d.classList.toggle('on',j===i)});
           if(i>0)hint.classList.add('gone');
           runCounters(e.target);}
       }
@@ -698,7 +680,7 @@ h2{font-size:clamp(1.9rem,4.6vw,3.6rem);max-width:19ch}
   slides.forEach(function(s,i){
     var li=document.createElement('li'),a=document.createElement('a');
     a.href='#'+s.id;
-    a.innerHTML='<span class="n">'+pad(i+1)+'</span>'+s.dataset.title;
+    a.textContent=s.dataset.title;
     a.addEventListener('click',function(){toggleMenu(false)});
     li.appendChild(a);ml.appendChild(li);
   });
@@ -737,66 +719,6 @@ h2{font-size:clamp(1.9rem,4.6vw,3.6rem);max-width:19ch}
       });
       el.addEventListener('pointerleave',function(){el.style.transform=''});
     });
-  }
-
-  // floating ghost slide numbers behind each section
-  slides.forEach(function(s,i){
-    if(i===0)return;
-    var g=document.createElement('span');
-    g.className='ghostnum';g.setAttribute('aria-hidden','true');
-    g.textContent=pad(i+1);
-    g.style.animationDelay=(-(i*1.37)%11)+'s';
-    g.style.animationDuration=(9+(i%4)*1.6)+'s';
-    s.appendChild(g);
-  });
-
-  // 3d floating metric field on the cover
-  var fn=document.getElementById('floatnums');
-  if(fn&&fn.getContext){
-    var fctx=fn.getContext('2d');
-    var METRICS=[
-      {t:'1.03B',c:'rgba(243,239,232,.55)'},{t:'4.12M',c:'rgba(194,162,100,.7)'},
-      {t:'66%',c:'rgba(243,239,232,.45)'},{t:'US$1T+',c:'rgba(194,162,100,.8)'},
-      {t:'408K',c:'rgba(243,239,232,.5)'},{t:'23.5M',c:'rgba(243,239,232,.4)'},
-      {t:'481M',c:'rgba(194,162,100,.55)'},{t:'US$345B',c:'rgba(243,239,232,.35)'}
-    ];
-    // deterministic pseudo-random placement
-    var parts=METRICS.map(function(m,i){
-      var h=(i*2654435761)%1000/1000;
-      var v=(i*40503)%1000/1000;
-      return {t:m.t,c:m.c,
-        x:.06+h*.88, y:.16+v*.72,
-        z:.35+((i*7)%10)/10*.65,          // depth 0.35..1 (1 = near)
-        ax:8+((i*13)%10),                  // drift amplitude
-        ay:10+((i*29)%14),
-        ph:i*.9, sp:.00022+((i*11)%7)*.00004};
-    });
-    var fmx=0,fmy=0;
-    addEventListener('pointermove',function(e){
-      fmx=e.clientX/innerWidth-.5; fmy=e.clientY/innerHeight-.5;
-    },{passive:true});
-    function fsize(){var r=fn.getBoundingClientRect();fn.width=r.width*devicePixelRatio;fn.height=r.height*devicePixelRatio;
-      fctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0)}
-    fsize();addEventListener('resize',fsize);
-    function fdraw(now){
-      var r=fn.getBoundingClientRect(),w=r.width,h=r.height;
-      fctx.clearRect(0,0,w,h);
-      parts.forEach(function(p){
-        var t=now*p.sp+p.ph;
-        var dx=Math.sin(t)*p.ax, dy=Math.cos(t*.8)*p.ay;
-        // parallax: nearer numbers move more with the pointer
-        var px=fmx*40*p.z, py=fmy*26*p.z;
-        var scale=Math.min(w,1100)/1100;
-        var size=Math.max(9,(13+p.z*30)*scale);
-        fctx.font='italic '+size+'px "Bodoni Moda", Didot, serif';
-        fctx.globalAlpha=.22+p.z*.6;
-        fctx.fillStyle=p.c;
-        fctx.fillText(p.t, p.x*w+dx+px, p.y*h+dy+py);
-        fctx.globalAlpha=1;
-      });
-      if(!reduce)requestAnimationFrame(fdraw);
-    }
-    if(reduce){fdraw(0)}else{requestAnimationFrame(fdraw)}
   }
 
   // cover orbit motif
