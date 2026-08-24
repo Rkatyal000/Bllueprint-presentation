@@ -10,6 +10,11 @@ Open `index.html` in any browser, or enable **GitHub Pages** (Settings → Pages
 
 `https://rkatyal000.github.io/Bllueprint-presentation/`
 
+## Decks
+
+- `index.html` — full 10-slide investor deck
+- `overview.html` — 4-slide overview: what it is, who we are, the problem, solution & unique features
+
 ## Features
 
 - Full-viewport editorial slides (jungle.vc-style format) with scroll-triggered reveals
